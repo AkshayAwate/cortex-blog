@@ -79,7 +79,7 @@ config:
   # -- See https://github.com/cortexproject/cortex/blob/master/docs/configuration/config-file-reference.md#storage_config
   storage:
     engine: blocks
-  blocks_storage:        #-- This configs to be added from here   --#
+  blocks_storage:
     backend: s3
     s3:
       bucket_name: k8s-tenant-metrics
@@ -95,7 +95,7 @@ config:
       bucket_index:
         enabled: true
   ruler_storage:
-    # backend: s3
+    backend: s3
     s3:
       bucket_name: k8s-tenant-metrics
       endpoint: s3.us-east-1.amazonaws.com
@@ -103,14 +103,14 @@ config:
       access_key_id: ""
       secret_access_key: ""
   alertmanager_storage:
-    # backend: s3
+    backend: s3
     s3:
       bucket_name: k8s-tenant-metrics
       endpoint: s3.us-east-1.amazonaws.com
       region: us-east-1
       access_key_id: ""
       secret_access_key: ""
-      enabled: true                   #-- This configs to be added to here   --#
+      # enabled: true
   # -- https://cortexmetrics.io/docs/configuration/configuration-file/#store_gateway_config
   store_gateway:
     sharding_enabled: false
